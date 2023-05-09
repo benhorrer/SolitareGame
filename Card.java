@@ -3,10 +3,13 @@ public class Card {
     private String suiteName;
     private int value;
     private String numberToString;
+    private String assetString;
 
     public Card(int suite, int value) {
         setSuite(suite);
         setValue(value);
+        char assetLetter = suiteName.charAt(0);
+        assetString = assetLetter + Integer.toString(value) + ".jpg";
     }
 
     public int getSuite() {
@@ -15,6 +18,10 @@ public class Card {
 
     public int getValue() {
         return value;
+    }
+
+    public String getAssetString() {
+        return assetString;
     }
 
     public String getSuiteName() {
