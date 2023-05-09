@@ -47,8 +47,10 @@ public class Deck {
 
     public void print() {
         for(Card x : cardDeck) {
+            if (x.getVisable()) {
             System.out.printf("%s of %s\n", x.getValueName(), x.getSuiteName());
             System.out.println("Asset located at ../assets/cards/" + x.getAssetString());
+            }
         }
         System.out.println("------------------------");
     }

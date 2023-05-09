@@ -4,12 +4,15 @@ public class Card {
     private int value;
     private String numberToString;
     private String assetString;
+    private boolean visable = false;
+    private static final String IMAGE_PATH = "../assets/cards/";
+
 
     public Card(int suite, int value) {
         setSuite(suite);
         setValue(value);
         char assetLetter = suiteName.charAt(0);
-        assetString = assetLetter + Integer.toString(value) + ".jpg";
+        assetString = IMAGE_PATH +  assetLetter + Integer.toString(value) + ".png";
     }
 
     public int getSuite() {
@@ -22,6 +25,14 @@ public class Card {
 
     public String getAssetString() {
         return assetString;
+    }
+
+    public void setVisible(boolean x) {
+        visable = x;
+    }
+
+    public boolean getVisable() {
+        return visable;
     }
 
     public String getSuiteName() {
